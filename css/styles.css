@@ -1,0 +1,208 @@
+/* Panificio Sanna dal 1976 — design system
+   Palette (dal pane + Sardegna): crema #F4E9D6 · carta #FBF5E9 · crosta oro #B9772E · bruno pane #5A3A22 · rosso sardo #A93524 · verde oliva #6E7B3D
+   Font: Fraunces (display serif caldo) · Figtree (testo) · Space Mono (etichette/prezzi)
+   Gesto-firma: le RADICI SARDE + la "CARTA DA MUSICA" (linee-pentagramma / fogli di carasau) */
+
+:root{
+  --crema:#F4E9D6;
+  --carta:#FBF5E9;
+  --oro:#B9772E;
+  --oro-scuro:#8A5620;
+  --bruno:#5A3A22;
+  --bruno-scuro:#3A2415;
+  --rosso:#A93524;
+  --oliva:#6E7B3D;
+  --grigio:#7A6A55;
+  --disp:'Fraunces',Georgia,serif;
+  --testo:'Figtree',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+  --r:14px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%;height:auto;display:block}
+body{margin:0;font-family:var(--testo);color:var(--bruno);background:var(--carta);line-height:1.65}
+a{color:inherit}
+h1,h2,h3{line-height:1.05;margin:0 0 .5em;font-weight:400}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+
+/* etichette mono */
+.kicker{font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rosso);margin:0 0 .9rem}
+.kicker-chiaro{color:var(--oro)}
+.titolo{font-family:var(--disp);font-size:clamp(2.1rem,5.5vw,3.8rem);font-weight:600;color:var(--bruno);font-optical-sizing:auto}
+.titolo em{font-style:italic;color:var(--rosso);font-weight:500}
+.titolo-chiaro{color:var(--crema)}
+.titolo-chiaro em{color:var(--oro)}
+.muted{color:var(--grigio)}
+
+/* intro */
+#intro{position:fixed;inset:0;background:var(--bruno-scuro);z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .6s ease}
+#intro.hide{opacity:0;pointer-events:none}
+.intro-inner{text-align:center;color:var(--crema);padding:1rem}
+.intro-stave{width:min(70vw,260px);height:auto;color:var(--oro);display:block;margin:0 auto .3rem}
+.intro-stave line{stroke-dasharray:230;stroke-dashoffset:230;animation:draw 1s ease forwards}
+.intro-stave line:nth-child(2){animation-delay:.12s}
+.intro-stave line:nth-child(3){animation-delay:.24s}
+.intro-stave line:nth-child(4){animation-delay:.36s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.reduced-motion .intro-stave line{stroke-dashoffset:0;animation:none}
+.intro-name{font-family:var(--disp);font-weight:600;font-size:2rem;margin:.4rem 0 .1rem}
+.intro-sub{font-family:var(--mono);font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--oro);margin:0}
+
+/* header */
+#site-head{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.5rem clamp(1rem,4vw,2.4rem);background:rgba(90,58,34,.97);border-bottom:2px solid var(--oro)}
+.brand{display:flex;flex-direction:column;line-height:1;text-decoration:none;color:var(--crema)}
+.brand-name{font-family:var(--disp);font-weight:600;font-size:1.35rem}
+.brand-since{font-family:var(--mono);font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--oro);margin-top:2px}
+#mainNav{display:flex;gap:1.3rem}
+#mainNav a{font-size:.85rem;font-weight:600;text-decoration:none;color:var(--crema)}
+#mainNav a:hover{color:var(--oro)}
+.head-actions{display:flex;align-items:center;gap:.7rem}
+#langToggle{font-family:var(--mono);font-weight:700;font-size:.72rem;background:none;border:1.5px solid var(--oro);color:var(--oro);border-radius:99px;padding:.28rem .6rem;cursor:pointer}
+.head-call{font-weight:700;font-size:.82rem;text-decoration:none;background:var(--oro);color:var(--bruno-scuro);padding:.45rem 1.1rem;border-radius:99px}
+.head-call:hover{background:var(--crema)}
+#burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.35rem;position:relative;z-index:112}
+#burger span{width:24px;height:2.5px;background:var(--crema);border-radius:2px;transition:transform .3s,opacity .3s}
+#burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+#burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+#burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+#burger[aria-expanded="true"] span{background:var(--oro)}
+
+/* hero */
+.hero{position:relative;min-height:96vh;min-height:96svh;display:flex;align-items:flex-end;overflow:hidden;background:var(--bruno-scuro)}
+#heroPhoto{position:absolute;inset:0;width:100%;height:112%;object-fit:cover;object-position:center 60%}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,36,21,.35) 0%,rgba(58,36,21,.35) 35%,rgba(45,25,12,.9) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 clamp(1.2rem,6vw,5rem) clamp(2.6rem,7vh,5rem);max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;color:var(--crema);font-weight:600;font-size:.88rem;background:rgba(45,25,12,.55);border:1px solid rgba(185,119,46,.55);border-radius:99px;padding:.32rem .85rem;margin:0 0 1rem}
+.g-logo{font-weight:800;background:var(--crema);color:#4285F4;border-radius:50%;width:1.25rem;height:1.25rem;display:inline-flex;align-items:center;justify-content:center;font-size:.82rem}
+.hero-kicker{font-family:var(--mono);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin:0 0 .5rem}
+.hero-title{font-family:var(--disp);font-weight:600;color:var(--crema);font-size:clamp(3rem,10vw,7rem);line-height:.95;margin:0 0 1rem}
+.hero-sub{color:#EDE2CE;font-size:clamp(1rem,1.9vw,1.2rem);max-width:36em;margin:0 0 1.7rem}
+.hero-sub strong{color:var(--oro)}
+.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn-primary{font-family:var(--testo);font-weight:700;text-decoration:none;background:var(--oro);color:var(--bruno-scuro);padding:.78rem 1.7rem;border-radius:99px;font-size:.95rem;display:inline-block}
+.btn-primary:hover{background:var(--crema)}
+.btn-ghost{font-weight:600;text-decoration:underline;text-underline-offset:4px;color:var(--crema);padding:.78rem .4rem;font-size:.92rem}
+
+/* ticker carta da musica */
+.ticker{background:var(--bruno);color:var(--crema);overflow:hidden;padding:.5rem 0;border-block:2px solid var(--oro)}
+.ticker-track{display:flex;gap:1.4rem;white-space:nowrap;width:max-content;animation:ticker 30s linear infinite;font-family:var(--disp);font-style:italic;font-size:1.05rem}
+.ticker-track i{color:var(--oro);font-style:normal}
+@keyframes ticker{to{transform:translateX(-50%)}}
+.reduced-motion .ticker-track{animation:none}
+
+/* radici (Sardegna) */
+.radici{max-width:1180px;margin:0 auto;padding:clamp(3.5rem,9vh,6.5rem) clamp(1.2rem,6vw,4.5rem);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,5vw,4rem);align-items:center}
+.radici-testo p{font-size:1.06rem;max-width:34em}
+.radici-testo p strong{color:var(--oro-scuro)}
+.stave{width:100%;max-width:420px;height:auto;color:var(--oro);margin:.3rem 0 1.6rem;display:block}
+.radici-foto{margin:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;box-shadow:8px 8px 0 var(--oro);border:2px solid var(--bruno)}
+.radici-foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.radici-foto:hover img{transform:scale(1.04)}
+
+/* tre mondi */
+.trovi{background:var(--crema);border-block:1px solid rgba(90,58,34,.12)}
+.trovi{max-width:none;padding:clamp(3.5rem,9vh,6.5rem) clamp(1.2rem,6vw,4.5rem);text-align:center}
+.trovi>.kicker,.trovi>.titolo{max-width:1140px;margin-inline:auto}
+.mondi{max-width:1140px;margin:2.4rem auto 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem;text-align:left}
+.mondo{background:var(--carta);border-radius:var(--r);overflow:hidden;box-shadow:0 12px 30px rgba(90,58,34,.12);display:flex;flex-direction:column}
+.mondo-foto{margin:0;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in}
+.mondo-foto img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mondo-foto:hover img{transform:scale(1.05)}
+.mondo-body{padding:1.4rem 1.4rem 1.7rem}
+.mondo-n{font-family:var(--mono);font-size:.8rem;color:var(--oro);letter-spacing:.1em}
+.mondo-body h3{font-family:var(--disp);font-weight:600;font-size:1.7rem;margin:.2rem 0 .5rem;color:var(--bruno)}
+.mondo-body p{margin:0;font-size:.95rem;color:var(--grigio)}
+
+/* famiglia (dark) */
+.famiglia{background:var(--bruno-scuro);color:var(--crema);text-align:center;padding:clamp(3.5rem,9vh,6.5rem) clamp(1.2rem,6vw,4.5rem)}
+.gen-line{display:flex;align-items:center;justify-content:center;gap:clamp(1rem,4vw,2.6rem);flex-wrap:wrap;margin:1.8rem 0}
+.gen{display:flex;flex-direction:column;gap:.25rem}
+.gen b{font-family:var(--disp);font-weight:600;font-size:clamp(1.3rem,3.5vw,2rem);color:var(--crema)}
+.gen small{font-family:var(--mono);font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--oro)}
+.gen-arrow{font-size:1.8rem;color:var(--oro)}
+.famiglia-p{max-width:44em;margin:0 auto;color:#E3D6C1;font-size:1.06rem}
+
+/* caffetteria */
+.caffetteria{max-width:1180px;margin:0 auto;padding:clamp(3.5rem,9vh,6rem) clamp(1.2rem,6vw,4.5rem)}
+.caff-testo{max-width:40em}
+.caff-testo p{font-size:1.1rem}
+.caff-testo p strong{color:var(--rosso)}
+.caff-testo .btn-primary{margin-top:1.4rem}
+
+/* gallery */
+.gallery{max-width:1180px;margin:0 auto;padding:clamp(2.5rem,7vh,5rem) clamp(1.2rem,6vw,4.5rem);text-align:center}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.2rem;margin-top:2rem}
+.shot{margin:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;box-shadow:0 8px 22px rgba(90,58,34,.14)}
+.shot img{width:100%;aspect-ratio:1/1;object-fit:cover;transition:transform .6s ease}
+.shot:hover img{transform:scale(1.05)}
+
+/* recensioni */
+.recensioni{background:var(--crema);border-block:1px solid rgba(90,58,34,.12);padding:clamp(3.5rem,9vh,6rem) clamp(1.2rem,6vw,4.5rem);text-align:center}
+.recensioni>.kicker,.recensioni>.titolo{max-width:1140px;margin-inline:auto}
+.rec-grid{max-width:1140px;margin:2.2rem auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem;text-align:left}
+.rec{margin:0;background:var(--carta);border:1px solid rgba(90,58,34,.14);border-radius:var(--r);padding:1.5rem 1.4rem 1.2rem}
+.rec p{margin:0 0 .8rem;font-size:.95rem;font-style:italic}
+.rec cite{font-style:normal;font-weight:700;font-size:.78rem;color:var(--oliva);font-family:var(--mono)}
+.rec cite::before{content:'★★★★★ ';color:var(--oro);letter-spacing:.05em}
+
+/* dove */
+.dove{max-width:1180px;margin:0 auto;padding:clamp(3.5rem,9vh,6.5rem) clamp(1.2rem,6vw,4.5rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:3rem;align-items:start}
+.dove-metro{font-size:1rem;color:var(--grigio)}
+.dove-foto{margin:1.4rem 0 0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;max-width:360px;box-shadow:0 8px 22px rgba(90,58,34,.16)}
+.dove-foto img{width:100%;height:auto}
+.orari{margin-top:1.4rem}
+.orario-stato{font-family:var(--disp);font-weight:600;font-size:1.35rem;color:var(--oliva);margin:0 0 .7rem}
+#orariTable{border-collapse:collapse;width:100%;max-width:28rem;font-size:.92rem}
+#orariTable td{padding:.32rem 0;border-bottom:1px solid rgba(90,58,34,.14)}
+#orariTable td:last-child{text-align:right;font-family:var(--mono);font-size:.82rem}
+#orariTable tr.is-today td{font-weight:700;color:var(--rosso)}
+.dove-cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.4rem}
+.mappa{border-radius:var(--r);overflow:hidden;border:2px solid var(--bruno);box-shadow:8px 8px 0 var(--oro)}
+.mappa iframe{width:100%;height:400px;border:0;display:block}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto;padding:0 clamp(1.2rem,6vw,4.5rem) clamp(3.5rem,9vh,6rem);text-align:center}
+.faq-list{text-align:left;margin-top:1.6rem}
+.faq details{border-bottom:1px solid rgba(90,58,34,.16);padding:.95rem 0}
+.faq summary{font-family:var(--disp);font-weight:600;font-size:1.15rem;cursor:pointer;color:var(--bruno)}
+.faq summary::marker{color:var(--oro)}
+.faq p{margin:.7rem 0 0;font-size:.95rem;color:var(--grigio)}
+
+/* footer / actionbar / lightbox */
+footer{background:var(--bruno-scuro);color:#C9B79E;text-align:center;padding:2.8rem 1.2rem 5.2rem;font-size:.9rem}
+.foot-brand{font-family:var(--disp);font-weight:600;font-size:1.5rem;color:var(--crema);margin:0 0 .4rem}
+.foot-brand span{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--oro);vertical-align:middle;margin-left:.4rem}
+footer a{color:var(--oro)}
+.foot-demo{font-size:.76rem;opacity:.6;max-width:44em;margin:1rem auto 0}
+.actionbar{position:fixed;left:0;right:0;bottom:0;z-index:110;display:none;grid-template-columns:repeat(3,1fr);background:var(--bruno-scuro);border-top:2px solid var(--oro);transform:translateY(100%);transition:transform .35s ease}
+.actionbar.is-visible{transform:none}
+.actionbar a{font-family:var(--disp);font-weight:600;font-size:1.02rem;color:var(--crema);text-decoration:none;text-align:center;padding:.85rem .4rem}
+.actionbar a+a{border-left:1px solid rgba(244,233,214,.2)}
+#lightbox{position:fixed;inset:0;z-index:150;background:rgba(45,25,12,.94);display:flex;align-items:center;justify-content:center;padding:2rem}
+#lightbox img{max-width:min(92vw,1000px);max-height:86vh;width:auto;height:auto;border-radius:var(--r)}
+#lightboxClose{position:absolute;top:1rem;right:1.4rem;font-size:2.4rem;background:none;border:none;color:var(--crema);cursor:pointer;line-height:1}
+
+/* reveal */
+.js .reveal,.js .reveal-hero{opacity:0}
+.js.reduced-motion .reveal,.js.reduced-motion .reveal-hero{opacity:1}
+
+/* responsive */
+@media(max-width:920px){
+  #mainNav{position:fixed;inset:0;background:var(--bruno-scuro);flex-direction:column;justify-content:center;align-items:center;gap:1.6rem;transform:translateX(100%);transition:transform .35s ease;z-index:111}
+  #mainNav.nav-open{transform:none}
+  #mainNav a{color:var(--crema);font-family:var(--disp);font-size:1.5rem}
+  #burger{display:flex}
+  .head-call{display:none}
+  .radici{grid-template-columns:1fr}
+  .mondi{grid-template-columns:1fr}
+  .dove{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .actionbar{display:grid}
+  footer{padding-bottom:6.4rem}
+  .rec-grid{grid-template-columns:1fr}
+  .radici-foto{box-shadow:5px 5px 0 var(--oro)}
+}
