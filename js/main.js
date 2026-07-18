@@ -88,8 +88,8 @@
   setTimeout(function () { if (!hasGsap || reducedMotion) showAllReveals(); }, 1500);
 
   if (hasGsap && !reducedMotion) {
-    gsap.utils.toArray('.reveal').forEach(function (el) {
-      gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .7, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+    gsap.utils.toArray('.reveal:not(.mondo)').forEach(function (el) {
+      gsap.fromTo(el, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .7, ease: 'power2.out', immediateRender: false, scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
     });
     gsap.to('#heroPhoto', { yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
     /* GESTO-FIRMA: le linee "carta da musica" (carasau) si disegnano */
@@ -103,7 +103,7 @@
     }
     /* tre mondi in stagger */
     gsap.fromTo('.mondo', { opacity: 0, y: 40 }, {
-      opacity: 1, y: 0, duration: .7, stagger: .14, ease: 'power2.out',
+      opacity: 1, y: 0, duration: .7, stagger: .14, ease: 'power2.out', immediateRender: false,
       scrollTrigger: { trigger: '.mondi', start: 'top 80%', once: true },
     });
   } else {
