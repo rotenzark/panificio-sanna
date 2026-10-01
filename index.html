@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
 <title>Panificio Sanna dal 1976 — pane, focacce e dolci in Via Marghera, Milano</title>
 <meta name="description" content="Panificio Sanna dal 1976: forno e pasticceria di famiglia in Via Marghera 37 a Milano, zona Wagner. Pane fresco ogni giorno, carasau e guttiau sardi, focacce, pizzette e dolci. Corner caffetteria. Chiama 02 481 2072.">
 <link rel="canonical" href="https://rotenzark.github.io/panificio-sanna/">
@@ -15,9 +16,7 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..600&family=Figtree:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css?v=1">
 <link rel="stylesheet" href="css/styles.css?v=1">
 <script type="application/ld+json">
 {
@@ -29,25 +28,89 @@
       "image": "https://rotenzark.github.io/panificio-sanna/img/og-image.jpg",
       "url": "https://rotenzark.github.io/panificio-sanna/",
       "telephone": "+39024812072",
-      "servesCuisine": ["Panificio", "Pasticceria", "Sarda"],
+      "servesCuisine": [
+        "Panificio",
+        "Pasticceria",
+        "Sarda"
+      ],
       "priceRange": "€",
       "description": "Forno e pasticceria di famiglia dal 1976, di origini sarde, in Via Marghera a Milano: pane fresco, carasau e guttiau, focacce, pizzette e dolci, con corner caffetteria.",
-      "address": { "@type": "PostalAddress", "streetAddress": "Via Marghera 37", "addressLocality": "Milano", "postalCode": "20149", "addressCountry": "IT" },
-      "geo": { "@type": "GeoCoordinates", "latitude": 45.4667477, "longitude": 9.1522333 },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.6", "reviewCount": "392", "bestRating": "5" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Marghera 37",
+        "addressLocality": "Milano",
+        "postalCode": "20149",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4667477,
+        "longitude": 9.1522333
+      },
       "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "19:30" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:30", "closes": "14:00" }
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:30",
+          "closes": "19:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:30",
+          "closes": "14:00"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Fate pane sardo?", "acceptedAnswer": { "@type": "Answer", "text": "Sì. Onoriamo le nostre radici sarde: ogni giorno trovi pane carasau e pane guttiau, preparati con rispetto per la tradizione, accanto al pane fresco di diverse tipologie." } },
-        { "@type": "Question", "name": "Che orari fate?", "acceptedAnswer": { "@type": "Answer", "text": "Dal lunedì al venerdì 07:30–19:30, il sabato 07:30–14:00. La domenica siamo chiusi." } },
-        { "@type": "Question", "name": "Si può fare colazione o una pausa sul posto?", "acceptedAnswer": { "@type": "Answer", "text": "Sì: abbiamo un corner caffetteria con tavolini dove gustare pane, salato e dolce dalla mattina presto fino a sera. Se sei di fretta puoi chiamare, ordinare e ritirare." } },
-        { "@type": "Question", "name": "Fate prodotti per le feste?", "acceptedAnswer": { "@type": "Answer", "text": "Sì: panettone, veneziana, panettone gastronomico, chiacchiere, tortelli, pan meino, colomba pasquale e pastiera per i ritrovi in famiglia, con amici o in ufficio." } },
-        { "@type": "Question", "name": "Dove siete?", "acceptedAnswer": { "@type": "Answer", "text": "In Via Marghera 37 a Milano, zona Wagner/De Angeli. Per ordini chiama lo 02 481 2072." } }
+        {
+          "@type": "Question",
+          "name": "Fate pane sardo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì. Onoriamo le nostre radici sarde: ogni giorno trovi pane carasau e pane guttiau, preparati con rispetto per la tradizione, accanto al pane fresco di diverse tipologie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Che orari fate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dal lunedì al venerdì 07:30–19:30, il sabato 07:30–14:00. La domenica siamo chiusi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Si può fare colazione o una pausa sul posto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì: abbiamo un corner caffetteria con tavolini dove gustare pane, salato e dolce dalla mattina presto fino a sera. Se sei di fretta puoi chiamare, ordinare e ritirare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fate prodotti per le feste?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sì: panettone, veneziana, panettone gastronomico, chiacchiere, tortelli, pan meino, colomba pasquale e pastiera per i ritrovi in famiglia, con amici o in ufficio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dove siete?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Via Marghera 37 a Milano, zona Wagner/De Angeli. Per ordini chiama lo 02 481 2072."
+          }
+        }
       ]
     }
   ]
@@ -246,7 +309,7 @@
     </div>
     <div class="dove-media">
       <div class="mappa reveal">
-        <iframe title="Mappa: Panificio Sanna, Via Marghera 37, Milano" src="https://www.google.com/maps?q=Panificio+SANNA,+Via+Marghera+37,+20149+Milano&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="mappa-clic" data-mappa-clic style="--mappa-h: 320px"><template><iframe title="Mappa: Panificio Sanna, Via Marghera 37, Milano" src="https://www.google.com/maps?q=Panificio+SANNA,+Via+Marghera+37,+20149+Milano&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></template><div class="mappa-clic__velo"><a class="mappa-clic__btn" href="https://www.google.com/maps/place/Panificio+SANNA+dal+1976/@45.4667477,9.1522333,17z" target="_blank" rel="noopener">Mostra la mappa</a><p class="mappa-clic__nota">La mappa è di Google: aprendola, Google riceve il tuo indirizzo IP e può usare i suoi cookie.</p></div></div>
       </div>
     </div>
   </section>
@@ -269,6 +332,7 @@
   <p class="foot-brand">Panificio Sanna <span>dal 1976</span></p>
   <p data-i18n="foot.dove">Via Marghera 37, 20149 Milano · <a href="tel:+39024812072">02 481 2072</a></p>
   <p class="foot-demo" data-i18n="foot.demo">Sito dimostrativo (concept) realizzato da Bespoke Studio con dati e foto pubblici — non è il sito ufficiale dell'attività.</p>
+  <p class="privacy-link"><a href="privacy.html">Privacy</a></p>
 </footer>
 
 <div class="actionbar" id="actionBar">
@@ -285,5 +349,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 <script src="js/main.js?v=3" defer></script>
+<script src="js/mappa-clic.js?v=1" defer></script>
 </body>
 </html>
